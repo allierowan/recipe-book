@@ -1,0 +1,25 @@
+{
+  "name": "recipe-book",
+  "version": "1.0.0",
+  "description": "save commonly used recipies and ingredients for future use",
+  "main": "server/app.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allierowan/recipe-book.git"
+  },
+  "author": "Allie Rowan",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.16"
+  },
+  "bugs": {
+    "url": "https://github.com/allierowan/recipe-book/issues"
+  },
+  "homepage": "https://github.com/allierowan/recipe-book#readme"
+}
