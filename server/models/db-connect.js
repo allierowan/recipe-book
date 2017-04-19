@@ -1,4 +1,3 @@
-
 var mongodb = require('mongodb');
 
 var uri = process.env.RECIPES_DB_URI;

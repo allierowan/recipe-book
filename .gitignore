@@ -1,7 +1,11 @@
 .sass-cache/
 *.css.map
 
+data/*
+.DS_Store
+
 .env
+.env.test
 
 # Logs
 logs
