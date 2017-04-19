@@ -15,7 +15,11 @@ server.use(function logger(req, res, next) {
     next();
 });
 
-server.use('/api/recipes', require('./routes/recipes'));
+server.get('/', function(req, res) {
+  res.send('Welcome');
+});
+
+// server.use('/api/recipes', require('./routes/recipes'));
 
 server.listen(server.get('port'), function serverStarted(err) {
     if (err) {
