@@ -1,5 +1,8 @@
 .sass-cache/
 *.css.map
+
+.env
+
 # Logs
 logs
 *.log

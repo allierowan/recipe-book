@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+require('dotenv').config();
 
 var server = express();
 
@@ -19,7 +20,7 @@ server.get('/', function(req, res) {
   res.send('Welcome');
 });
 
-// server.use('/api/recipes', require('./routes/recipes'));
+server.use('/api/recipes', require('./routes/recipes'));
 
 server.listen(server.get('port'), function serverStarted(err) {
     if (err) {
