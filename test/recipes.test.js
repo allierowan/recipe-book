@@ -80,6 +80,25 @@ test('delete a recipe', function(t) {
   });
 });
 
+test('update a recipe', function(t) {
+  recipes.create({
+    name: "test4update",
+    source: "bestrecipe.com",
+  }, function callback(err, data) {
+    t.ifError(err);
+    var id = data.ops[0]._id;
+    recipes.update({_id: id, name: "updated"}, function callback(err, data) {
+      t.ifError(err);
+      t.equal(data.ok, 1);
+      recipes.getOne(id, function callback(err, data) {
+        t.ifError(err);
+        t.equal(data.name, "updated");
+        t.end();
+      });
+    });
+  });
+});
+
 
 teardown();
 

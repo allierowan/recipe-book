@@ -1,11 +1,13 @@
 var dbConnect = require('./db-connect');
 var ObjectID = require('mongodb').ObjectID;
+var _  = require('lodash');
 
 module.exports = {
     create,
     getOne,
     getAll,
-    removeOne
+    removeOne,
+    update
 };
 
 function getAll(done) {
@@ -84,5 +86,23 @@ function removeOne(id, done) {
     }
 
     db.collection('recipes').deleteOne({_id: new ObjectID(id)}, done);
+  });
+}
+
+function update(params, done) {
+  dbConnect(function connectHandler(err, db) {
+    if (err) {
+      done(err, null);
+      return;
+    }
+
+    var cleanParams = _.pick(params, 'name', 'rating', 'source', 'ingredients');
+    db.collection('recipes').findAndModify({_id: params._id}, [], {$set: cleanParams}, {}, function callback(err, data) {
+      if (err) {
+        done(err, null);
+        return;
+      }
+      done(null, data);
+    });
   });
 }
