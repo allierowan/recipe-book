@@ -9,5 +9,16 @@
   </head>
   <body>
     <h1>Recipe Book</h1>
+    <p class='message'></p>
+    <form class="add-recipe" action="/api/recipes" method="post">
+      <input type='text' name='name' placeholder='Recipe Name' required>
+      <input type='text' name='source' placeholder='URL or Recipe Source'>
+      <input type='submit' value='Create New Recipe'>
+    </form>
+    <h3>Your Recipes</h3>
+    <ul class="recipe-list"></ul>
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src='js/view.js'></script>
+    <script src='js/api.js'></script>
   </body>
 </html>
